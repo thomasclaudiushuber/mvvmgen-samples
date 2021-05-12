@@ -48,7 +48,7 @@ namespace EmployeeManager.WinUI
             ServiceProvider = serviceCollection.BuildServiceProvider(true);
 
             m_window = ServiceProvider.GetService<MainWindow>();
-            m_window.Activate();
+            m_window?.Activate();
         }
 
         public static ServiceProvider? ServiceProvider { get; private set; }
