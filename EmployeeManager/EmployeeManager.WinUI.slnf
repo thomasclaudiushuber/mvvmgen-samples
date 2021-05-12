@@ -1,0 +1,12 @@
+{
+  "solution": {
+    "path": "EmployeeManager.sln",
+    "projects": [
+      "EmployeeManager.Common\\EmployeeManager.Common.csproj",
+      "EmployeeManager.Data\\EmployeeManager.Data.csproj",
+      "EmployeeManager.ViewModel\\EmployeeManager.ViewModel.csproj",
+      "EmployeeManager.WinUI\\EmployeeManager.WinUI (Package)\\EmployeeManager.WinUI (Package).wapproj",
+      "EmployeeManager.WinUI\\EmployeeManager.WinUI\\EmployeeManager.WinUI.csproj"
+    ]
+  }
+}

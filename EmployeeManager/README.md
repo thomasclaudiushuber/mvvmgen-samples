@@ -1,0 +1,3 @@
+To run the application, you need to set either the EmployeeManager.Wpf project or the EmployeeManager.WinUI (Package) project as a start up project.
+
+If you don't have the workloads for Universal Windows Platform development installed with Visual Studio, you are not able to build and run the WinUI project. Then go only with the WPF project. Just open the EmployeeManager.WinUI.slnf Solution Filter with Visual Studio, it has all the projects, but the WinUI projects are excluded. 

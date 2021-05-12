@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>MvvmGenSamples.RegistrationScreen.Wpf</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\mvvmgen_logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MvvmGen" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\mvvmgen_logo.png" />
+  </ItemGroup>
+
+</Project>

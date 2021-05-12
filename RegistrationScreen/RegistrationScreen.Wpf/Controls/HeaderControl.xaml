@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="MvvmGenSamples.RegistrationScreen.Wpf.Controls.HeaderControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+  <Grid Background="#333">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition/>
+    </Grid.ColumnDefinitions>
+    <Image Source="..\Images\mvvmgen_logo.png" Height="125" Stretch="None" HorizontalAlignment="Left"/>
+    <TextBlock Text="Registration Screen WPF Sample"
+               Grid.Column="1" FontSize="30"
+               Foreground="White" VerticalAlignment="Center"
+               HorizontalAlignment="Center" Margin="15"/>
+  </Grid>
+</UserControl>

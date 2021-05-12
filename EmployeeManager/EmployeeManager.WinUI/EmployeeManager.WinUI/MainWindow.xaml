@@ -1,0 +1,42 @@
+﻿<Window
+    x:Class="EmployeeManager.WinUI.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EmployeeManager.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:view="using:EmployeeManager.WinUI.View"
+  xmlns:viewModel="using:EmployeeManager.ViewModel" xmlns:controls="using:EmployeeManager.WinUI.Controls"
+  mc:Ignorable="d">
+
+  <Grid x:Name="_root">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="200"/>
+      <ColumnDefinition/>
+    </Grid.ColumnDefinitions>
+
+    <controls:HeaderControl Grid.ColumnSpan="2"/>
+
+    <view:NavigationView Grid.Row="1" Margin="10" ViewModel="{x:Bind ViewModel.NavigationViewModel}"/>
+
+    <TabView Grid.Row="1" Grid.Column="1" Margin="10"
+               TabItemsSource="{x:Bind ViewModel.EmployeeViewModels}"
+               SelectedItem="{x:Bind ViewModel.SelectedEmployee, Mode=TwoWay}"
+               IsAddTabButtonVisible="False"
+               TabCloseRequested="TabView_TabCloseRequested">
+      <TabView.TabItemTemplate>
+        <DataTemplate x:DataType="viewModel:EmployeeViewModel">
+          <TabViewItem Header="{x:Bind FirstName,Mode=OneWay}" FontSize="40">
+            <TabViewItem.Content>
+              <view:EmployeeView ViewModel="{x:Bind}"/>
+            </TabViewItem.Content>
+          </TabViewItem>
+        </DataTemplate>
+      </TabView.TabItemTemplate>
+    </TabView>
+  </Grid>
+</Window>
