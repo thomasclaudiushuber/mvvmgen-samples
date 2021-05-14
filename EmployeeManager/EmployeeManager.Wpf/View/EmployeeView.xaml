@@ -35,7 +35,9 @@
     <TextBox Text="{Binding LastName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
              Grid.Row="2" Grid.Column="1" Margin="10"/>
       
-    <CheckBox Content="IsDeveloper" Grid.Row="3" Grid.Column="1" Margin="10"/>
+    <CheckBox Content="IsDeveloper"
+              IsChecked="{Binding IsDeveloper,Mode=TwoWay}"
+              Grid.Row="3" Grid.Column="1" Margin="10"/>
       
     <TextBlock Text="Update comment" Grid.Row="4" Margin="10 10 0 10"/>
     <TextBox Text="{Binding UpdateComment,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
