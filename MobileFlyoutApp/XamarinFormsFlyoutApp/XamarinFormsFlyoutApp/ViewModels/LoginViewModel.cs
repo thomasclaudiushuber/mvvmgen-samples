@@ -1,21 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using XamarinFormsFlyoutApp.Views;
+using MvvmGen;
 using Xamarin.Forms;
-using XamarinFormsFlyoutApp.Views;
 
 namespace XamarinFormsFlyoutApp.ViewModels
 {
-  public class LoginViewModel : BaseViewModel
+  [ViewModel]
+  public partial class LoginViewModel : BaseViewModel
   {
-    public Command LoginCommand { get; }
-
-    public LoginViewModel()
-    {
-      LoginCommand = new Command(OnLoginClicked);
-    }
-
-    private async void OnLoginClicked(object obj)
+    [Command]
+    private async void Login(object obj)
     {
       // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
       await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");

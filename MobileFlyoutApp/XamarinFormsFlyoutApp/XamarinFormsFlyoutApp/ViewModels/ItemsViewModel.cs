@@ -1,36 +1,30 @@
-﻿using System;
+﻿using XamarinFormsFlyoutApp.Models;
+using XamarinFormsFlyoutApp.Views;
+using MvvmGen;
+using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
-
-using XamarinFormsFlyoutApp.Models;
-using XamarinFormsFlyoutApp.Views;
 
 namespace XamarinFormsFlyoutApp.ViewModels
 {
-  public class ItemsViewModel : BaseViewModel
+  [ViewModel]
+  public partial class ItemsViewModel : BaseViewModel
   {
+    [PropertyCallMethod(nameof(OnItemSelected), MethodArgs = "_selectedItem")]
+    [Property]
     private Item _selectedItem;
 
-    public ObservableCollection<Item> Items { get; }
-    public Command LoadItemsCommand { get; }
-    public Command AddItemCommand { get; }
-    public Command<Item> ItemTapped { get; }
+    public ObservableCollection<Item> Items { get; } = new ObservableCollection<Item>();
 
-    public ItemsViewModel()
+    partial void OnInitialize()
     {
       Title = "Browse";
-      Items = new ObservableCollection<Item>();
-      LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
-
-      ItemTapped = new Command<Item>(OnItemSelected);
-
-      AddItemCommand = new Command(OnAddItem);
     }
 
-    async Task ExecuteLoadItemsCommand()
+    [Command]
+    async Task LoadItems()
     {
       IsBusy = true;
 
@@ -59,28 +53,20 @@ namespace XamarinFormsFlyoutApp.ViewModels
       SelectedItem = null;
     }
 
-    public Item SelectedItem
-    {
-      get => _selectedItem;
-      set
-      {
-        SetProperty(ref _selectedItem, value);
-        OnItemSelected(value);
-      }
-    }
-
-    private async void OnAddItem(object obj)
+    [Command]
+    private async void AddItem(object obj)
     {
       await Shell.Current.GoToAsync(nameof(NewItemPage));
     }
 
-    async void OnItemSelected(Item item)
+    [Command(PropertyName = "ItemTapped")]
+    async void OnItemSelected(object obj)
     {
-      if (item == null)
-        return;
-
-      // This will push the ItemDetailPage onto the navigation stack
-      await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.Id}");
+      if (obj is Item item)
+      {
+        // This will push the ItemDetailPage onto the navigation stack
+        await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.Id}");
+      }
     }
   }
 }

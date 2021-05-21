@@ -1,18 +1,18 @@
-﻿using System;
-using System.Windows.Input;
+﻿using MvvmGen;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace XamarinFormsFlyoutApp.ViewModels
 {
-  public class AboutViewModel : BaseViewModel
+  [ViewModel]
+  public partial class AboutViewModel : BaseViewModel
   {
-    public AboutViewModel()
+    partial void OnInitialize()
     {
       Title = "About";
-      OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
     }
 
-    public ICommand OpenWebCommand { get; }
+    [Command]
+    public async void OpenWeb() => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart");
   }
 }

@@ -1,43 +1,21 @@
-﻿using System;
+﻿using XamarinFormsFlyoutApp.Models;
+using MvvmGen;
+using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using XamarinFormsFlyoutApp.Models;
 
 namespace XamarinFormsFlyoutApp.ViewModels
 {
   [QueryProperty(nameof(ItemId), nameof(ItemId))]
-  public class ItemDetailViewModel : BaseViewModel
+  [ViewModel]
+  public partial class ItemDetailViewModel : BaseViewModel
   {
-    private string itemId;
-    private string text;
-    private string description;
+    [PropertyCallMethod(nameof(LoadItemId), MethodArgs = "itemId")]
+    [Property] private string itemId;
+    [Property] private string text;
+    [Property] private string description;
     public string Id { get; set; }
-
-    public string Text
-    {
-      get => text;
-      set => SetProperty(ref text, value);
-    }
-
-    public string Description
-    {
-      get => description;
-      set => SetProperty(ref description, value);
-    }
-
-    public string ItemId
-    {
-      get
-      {
-        return itemId;
-      }
-      set
-      {
-        itemId = value;
-        LoadItemId(value);
-      }
-    }
 
     public async void LoadItemId(string itemId)
     {
