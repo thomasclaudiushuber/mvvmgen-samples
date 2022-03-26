@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <RootNamespace>MvvmGenSamples.RegistrationScreen.Wpf</RootNamespace>
   </PropertyGroup>
@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MvvmGen" Version="1.1.1" />
+    <PackageReference Include="MvvmGen" Version="1.1.5" />
   </ItemGroup>
 
   <ItemGroup>
