@@ -2,12 +2,12 @@
     x:Class="EmployeeManager.WinUI.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:EmployeeManager.WinUI"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-  xmlns:view="using:EmployeeManager.WinUI.View"
-  xmlns:viewModel="using:EmployeeManager.ViewModel" xmlns:controls="using:EmployeeManager.WinUI.Controls"
-  mc:Ignorable="d">
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:controls="using:EmployeeManager.WinUI.Controls"
+    xmlns:view="using:EmployeeManager.WinUI.View" 
+    xmlns:viewModel="using:EmployeeManager.ViewModel"
+    mc:Ignorable="d">
 
   <Grid x:Name="_root">
     <Grid.RowDefinitions>
@@ -34,6 +34,11 @@
             <TabViewItem.Content>
               <view:EmployeeView ViewModel="{x:Bind}"/>
             </TabViewItem.Content>
+            <TabViewItem.HeaderTemplate>
+              <DataTemplate>
+                <TextBlock FontSize="20" Text="{Binding}"/>
+              </DataTemplate>
+            </TabViewItem.HeaderTemplate>
           </TabViewItem>
         </DataTemplate>
       </TabView.TabItemTemplate>

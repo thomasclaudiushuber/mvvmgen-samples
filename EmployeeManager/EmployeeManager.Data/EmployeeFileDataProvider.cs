@@ -4,6 +4,7 @@
 // Licensed under the MIT license => See LICENSE file in project root
 // ***************************************************************************
 
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace EmployeeManager.Data
 {
     public class EmployeeFileDataProvider : IEmployeeDataProvider
     {
-        private readonly string _file = "Employee.json";
+        private readonly string _file = Path.Combine(Path.GetDirectoryName(typeof(EmployeeFileDataProvider).Assembly.Location)!,"Employee.json");
 
         public IEnumerable<Employee> GetAll()
         {

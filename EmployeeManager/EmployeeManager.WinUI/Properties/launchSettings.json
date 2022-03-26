@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "EmployeeManager.WinUI (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "EmployeeManager.WinUI (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
