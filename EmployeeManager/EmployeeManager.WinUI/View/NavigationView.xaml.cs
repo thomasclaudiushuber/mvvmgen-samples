@@ -16,6 +16,6 @@ namespace EmployeeManager.WinUI.View
             InitializeComponent();
         }
 
-        public NavigationViewModel ViewModel { get; set; }
+        public INavigationViewModel? ViewModel { get; set; }
     }
 }

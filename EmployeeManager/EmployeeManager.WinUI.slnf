@@ -4,6 +4,7 @@
     "projects": [
       "EmployeeManager.Common\\EmployeeManager.Common.csproj",
       "EmployeeManager.Data\\EmployeeManager.Data.csproj",
+      "EmployeeManager.ViewModel.Tests\\EmployeeManager.ViewModel.Tests.csproj",
       "EmployeeManager.ViewModel\\EmployeeManager.ViewModel.csproj",
       "EmployeeManager.WinUI\\EmployeeManager.WinUI.csproj"
     ]

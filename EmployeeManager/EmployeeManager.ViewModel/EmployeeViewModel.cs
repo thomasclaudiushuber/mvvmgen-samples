@@ -14,6 +14,7 @@ namespace EmployeeManager.ViewModel
 {
     [Inject(typeof(IEmployeeDataProvider))]
     [Inject(typeof(IEventAggregator))]
+    [ViewModelGenerateInterface]
     [ViewModelGenerateFactory]
     [ViewModel(typeof(Employee))]
     public partial class EmployeeViewModel
@@ -34,7 +35,7 @@ namespace EmployeeManager.ViewModel
             return !string.IsNullOrEmpty(FirstName);
         }
 
-        internal void Load(int employeeId)
+        public void Load(int employeeId)
         {
             Model = EmployeeDataProvider.GetById(employeeId);
         }

@@ -12,6 +12,6 @@ namespace EmployeeManager.ViewModel
     public partial class NavigationItemViewModel
     {
         [Property] int _id;
-        [Property] string _firstName;
+        [Property] string? _firstName;
     }
 }

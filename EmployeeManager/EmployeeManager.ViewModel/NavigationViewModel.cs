@@ -15,6 +15,7 @@ namespace EmployeeManager.ViewModel
 {
     [Inject(typeof(IEmployeeDataProvider))]
     [Inject(typeof(IEventAggregator))]
+    [ViewModelGenerateInterface]
     [ViewModel]
     public partial class NavigationViewModel : IEventSubscriber<EmployeeSavedEvent, EmployeeTabSelectedEvent>
     {
@@ -26,7 +27,6 @@ namespace EmployeeManager.ViewModel
 
         public void Load()
         {
-
             Items.Clear();
             foreach (var employee in EmployeeDataProvider.GetAll())
             {
