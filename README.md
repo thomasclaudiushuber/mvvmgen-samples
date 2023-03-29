@@ -9,6 +9,7 @@ This repository contains the following samples
   - use MvvmGen's EventAggregator 
   - use MvvmGen's ViewModelFactory
   - set up Dependency Injection
+  - write unit tests
 - **MobileFlyoutApp** - a Xamarin.Forms Flyout app created with the Visual Studio project template. The ViewModels are adjusted to use code generation with MvvmGen 
 - **RegistrationScreen** - a simple WPF app that shows you how to generate properties and commands with MvvmGen.
 
