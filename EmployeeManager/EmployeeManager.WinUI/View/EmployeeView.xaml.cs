@@ -19,6 +19,6 @@ namespace EmployeeManager.WinUI.View
             InitializeComponent();
         }
 
-        public EmployeeViewModel ViewModel { get; set; }
+        public EmployeeViewModel? ViewModel { get; set; }
     }
 }

@@ -21,7 +21,7 @@ namespace EmployeeManager.WinUI
             serviceCollection.AddTransient<MainWindow>();
             serviceCollection.AddTransient<MainViewModel>();
             serviceCollection.AddTransient<IEmployeeDataProvider, EmployeeFileDataProvider>();
-            serviceCollection.AddTransient<NavigationViewModel>();
+            serviceCollection.AddTransient<INavigationViewModel, NavigationViewModel>();
             serviceCollection.AddTransient<IEmployeeViewModelFactory, EmployeeViewModelFactory>();
 
             ServiceProvider = serviceCollection.BuildServiceProvider(true);
@@ -32,6 +32,6 @@ namespace EmployeeManager.WinUI
 
         public static ServiceProvider? ServiceProvider { get; private set; }
 
-        private Window m_window;
+        private Window? m_window;
     }
 }
