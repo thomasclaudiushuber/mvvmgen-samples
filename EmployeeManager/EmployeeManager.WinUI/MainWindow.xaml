@@ -29,7 +29,7 @@
                IsAddTabButtonVisible="False"
                TabCloseRequested="TabView_TabCloseRequested">
       <TabView.TabItemTemplate>
-        <DataTemplate x:DataType="viewModel:EmployeeViewModel">
+        <DataTemplate x:DataType="viewModel:IEmployeeViewModel">
           <TabViewItem Header="{x:Bind FirstName,Mode=OneWay}" FontSize="40">
             <TabViewItem.Content>
               <view:EmployeeView ViewModel="{x:Bind}"/>
